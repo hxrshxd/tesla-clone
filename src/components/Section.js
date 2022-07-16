@@ -1,17 +1,19 @@
 import React from 'react'
 import styled from "styled-components"
 
-function Section() {
+function Section({ title, description, leftBtn, rightBtn, backgroundImage }) {
   return (
-    <Wrap>
+    <Wrap bgImage= { backgroundImage }>
       <ItemText>
-        <h1>Model S</h1>
-        <p>Order online touchless delivery</p>
+        <h1>{ title }</h1>
+        <p>{ description }</p>
       </ItemText>
       <Buttons>
         <ButtonGroup>
-          <LeftButton>Custom order</LeftButton>
-          <RightButton>Existing Inventory</RightButton>
+          <LeftButton>{ leftBtn }</LeftButton>
+          { rightBtn && 
+            <RightButton>{ rightBtn }</RightButton>
+          }
         </ButtonGroup>
         <ArrowDown src="/images/down-arrow.svg" />
       </Buttons>
@@ -27,7 +29,7 @@ const Wrap = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('/images/model-s.jpg');
+  background-image: ${ props => `url(/images/${props.bgImage})`};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
