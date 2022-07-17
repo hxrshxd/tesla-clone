@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 function Header() {
   return (
@@ -20,15 +21,18 @@ function Header() {
         <CustomMenu />
       </RightMenu>
       <BurgerNav>
-        <li><a>Existing Inventory</a></li>
-        <li><a>Existing Inventory</a></li>
-        <li><a>Existing Inventory</a></li>
-        <li><a>Existing Inventory</a></li>
-        <li><a>Existing Inventory</a></li>
-        <li><a>Existing Inventory</a></li>
-        <li><a>Existing Inventory</a></li>
-        <li><a>Existing Inventory</a></li>
-        <li><a>Existing Inventory</a></li>
+        <CloseWrapper>
+          <CustomClose />
+        </CloseWrapper>
+        <li><a href='#'>Existing Inventory</a></li>
+        <li><a href='#'>Existing Inventory</a></li>
+        <li><a href='#'>Existing Inventory</a></li>
+        <li><a href='#'>Existing Inventory</a></li>
+        <li><a href='#'>Existing Inventory</a></li>
+        <li><a href='#'>Existing Inventory</a></li>
+        <li><a href='#'>Existing Inventory</a></li>
+        <li><a href='#'>Existing Inventory</a></li>
+        <li><a href='#'>Existing Inventory</a></li>
       </BurgerNav>
     </Container>
     
@@ -81,7 +85,7 @@ const CustomMenu = styled(MenuIcon)`
   cursor: pointer
 `
  
- const BurgerNav = styled.div`
+const BurgerNav = styled.div`
   background-color: white;
   position: fixed;
   top: 0;
@@ -102,8 +106,16 @@ const CustomMenu = styled(MenuIcon)`
       font-weight: 600;
     }
   }
- `
- 
+`
+
+const CustomClose = styled(CloseIcon)`
+  cursor: pointer;
+`
+
+const CloseWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
 
 
 
