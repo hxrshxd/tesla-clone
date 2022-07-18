@@ -41,20 +41,22 @@ function Header() {
         <CloseWrapper>
           <CustomClose onClick={() => setBurgerStatus(false)}/>
         </CloseWrapper>
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Used Inventory</a></li>
-        <li><a href='#'>Trade-In</a></li>
-        <li><a href='#'>Test Drive</a></li>
-        <li><a href='#'>Insurance</a></li>
-        <li><a href='#'>CyberTruck</a></li>
-        <li><a href='#'>Roadster</a></li>
-        <li><a href='#'>Semi</a></li>
-        <li><a href='#'>Cherging</a></li>
-        <li><a href='#'>PowerWall</a></li>
-        <li><a href='#'>Commercial Energy</a></li>
-        <li><a href='#'>Utilities</a></li>
-        <li><a href='#'>Find Us</a></li>
-        <li><a href='#'>Support</a></li>
+        <BurgerNavScroll>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Existing Inventory</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Used Inventory</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Trade-In</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Test Drive</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Insurance</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>CyberTruck</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Roadster</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Semi</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Powerwall</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Commercial Energy</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Utilities</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Find Us</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Support</a></li>
+        <li><a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Investor Realtions</a></li>
+        </BurgerNavScroll>
       </BurgerNav>
     </Container>
     
@@ -109,10 +111,6 @@ const RightMenu = styled.div`
   }
 `
  
-const CustomMenu = styled.div`
-  cursor: pointer
-`
- 
 const BurgerNav = styled.div`
   background-color: white;
   position: fixed;
@@ -124,19 +122,27 @@ const BurgerNav = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding: 50px;
+  padding: 20px 20px 20px 50px;
   transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.2s;
-  overflor-y: scroll;
   li {
     padding: 15px 0;
     list-style-type: none;
-
+    
     a {
       font-size: 14px;
       font-weight: 600;
+      letter-spacing: 0.4px; 
     }
   }
+  `
+  
+  const BurgerNavScroll = styled.div`
+  margin-top: 20px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+      width: 0.1px;
+  }  
 `
 
 const CustomClose = styled(CloseIcon)`

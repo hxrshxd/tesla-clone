@@ -44,6 +44,11 @@ const Wrap = styled.div`
 const ItemText = styled.div`
   padding-top: 15vh;
   text-align: center;
+
+  h1 {
+    font-size: 40px;
+    margin-bottom: 14px;
+  }
 `
 
 const ButtonGroup = styled.div`

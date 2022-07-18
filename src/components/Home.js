@@ -34,15 +34,15 @@ function Home() {
         backgroundImage = 'model-x.jpg'
       />
       <Section 
-        title= 'Lowest cost solar panel in America'
-        description = 'Money-back Garuntee'
+        title= 'Solar Panels'
+        description = 'Lowest Cost Solar Panels in America'
         leftBtn = 'Order now'
         rightBtn = 'Know more'
         backgroundImage = 'solar-panel.jpg'
       />
       <Section 
-        title= 'Solar for New Roofs'
-        description = 'Solar Roofs cost less than a New roofs plus Solar panel'
+        title= 'Solar Roofs'
+        description = 'Produce Clean Energy From Your Roof'
         leftBtn = 'Order now'
         rightBtn = 'Know more'
         backgroundImage = 'solar-roof.jpg'
