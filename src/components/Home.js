@@ -6,6 +6,20 @@ function Home() {
   return (
     <Container>
       <Section 
+        title= 'Model 3'
+        description = 'Ordre online touchless delivery'
+        leftBtn = 'Custom Order'
+        rightBtn = 'Existing Inventory'
+        backgroundImage = 'model-3.jpg'
+      />
+      <Section 
+        title= 'Model Y'
+        description = 'Ordre online touchless delivery'
+        leftBtn = 'Custom Order'
+        rightBtn = 'Existing Inventory'
+        backgroundImage = 'model-y.jpg'
+      />
+      <Section 
         title= 'Model S'
         description = 'Ordre online touchless delivery'
         leftBtn = 'Custom Order'
@@ -18,20 +32,6 @@ function Home() {
         leftBtn = 'Custom Order'
         rightBtn = 'Existing Inventory'
         backgroundImage = 'model-x.jpg'
-      />
-      <Section 
-        title= 'Model Y'
-        description = 'Ordre online touchless delivery'
-        leftBtn = 'Custom Order'
-        rightBtn = 'Existing Inventory'
-        backgroundImage = 'model-y.jpg'
-      />
-      <Section 
-        title= 'Model 3'
-        description = 'Ordre online touchless delivery'
-        leftBtn = 'Custom Order'
-        rightBtn = 'Existing Inventory'
-        backgroundImage = 'model-3.jpg'
       />
       <Section 
         title= 'Lowest cost solar panel in America'

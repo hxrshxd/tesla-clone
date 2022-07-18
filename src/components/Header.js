@@ -9,6 +9,14 @@ function Header() {
   const [burgerStatus, setBurgerStatus] = useState(false);
   const cars = useSelector(selectCars);
 
+  function MouseEnter(event) {
+    event.target.style.opacity = 0.5;
+  }
+
+  function MouseLeave(event) {
+    event.target.style.opacity = 1;
+  }
+
   return (
     <Container>
       <a href='#'>
@@ -16,30 +24,37 @@ function Header() {
       </a>
       <Menu>
         { cars && cars.map((car, index) => (
-          <a key={index} href='#'>{ car }</a>
+          <a 
+            onMouseEnter={MouseEnter} onMouseLeave={MouseLeave}
+          key={index} href='#'>{ car }</a>
         )) }
       </Menu>
       <RightMenu>
-        <a href='#'>Shop</a>
-        <a href='#'>Tesla Account</a>
-        <CustomMenu onClick={() => setBurgerStatus(true)}/>
+        <a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Shop</a>
+        <a onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} href='#'>Account</a>
+        <span 
+          onMouseEnter={MouseEnter} onMouseLeave={MouseLeave}
+        onClick={() => setBurgerStatus(true)}>Menu</span>
+        {/* <CustomMenu>Menu</CustomMenu> */}
       </RightMenu>
       <BurgerNav show={burgerStatus}>
         <CloseWrapper>
           <CustomClose onClick={() => setBurgerStatus(false)}/>
         </CloseWrapper>
-        { cars && cars.map((car, index) => (
-          <li><a key={index} href='#'>{ car }</a></li>
-        )) }
         <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Existing Inventory</a></li>
-        <li><a href='#'>Existing Inventory</a></li>
+        <li><a href='#'>Used Inventory</a></li>
+        <li><a href='#'>Trade-In</a></li>
+        <li><a href='#'>Test Drive</a></li>
+        <li><a href='#'>Insurance</a></li>
+        <li><a href='#'>CyberTruck</a></li>
+        <li><a href='#'>Roadster</a></li>
+        <li><a href='#'>Semi</a></li>
+        <li><a href='#'>Cherging</a></li>
+        <li><a href='#'>PowerWall</a></li>
+        <li><a href='#'>Commercial Energy</a></li>
+        <li><a href='#'>Utilities</a></li>
+        <li><a href='#'>Find Us</a></li>
+        <li><a href='#'>Support</a></li>
       </BurgerNav>
     </Container>
     
@@ -67,10 +82,11 @@ const Menu = styled.div`
   flex: 1;
   align-items: center;
  a {
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   padding: 0 10px;
-  text-transform: uppercase; 
   flex-wrap: nowrap;
+  letter-spacing: 0.6px;
   }
 
   @media (max-width: 786px) {
@@ -81,14 +97,19 @@ const Menu = styled.div`
 const RightMenu = styled.div`
   display: flex;
   align-items: center;
-  a {
+  a, span {
+    font-size: 14px;
     font-weight: 600;
-    margin-right: 10px;
-    text-transform: uppercase; 
+    margin-left: 28px;
+    letter-spacing: 0.6px; 
+  }
+
+  span {
+    cursor: pointer;
   }
 `
  
-const CustomMenu = styled(MenuIcon)`
+const CustomMenu = styled.div`
   cursor: pointer
 `
  
@@ -99,19 +120,20 @@ const BurgerNav = styled.div`
   right: 0;
   bottom: 0;
   z-index: 10;
-  width: 300px;
+  width: 270px;
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding: 20px;
+  padding: 50px;
   transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.2s;
+  overflor-y: scroll;
   li {
     padding: 15px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     list-style-type: none;
 
     a {
+      font-size: 14px;
       font-weight: 600;
     }
   }
